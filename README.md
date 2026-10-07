@@ -36,6 +36,6 @@ To rebuild without internet: `sh /root/station.sh <1-4>`.
 
 - Saving the wifi page in the web UI can undo the 20 MHz and TX power settings. Re-run `station.sh`.
 - Wifi settings live in three files in `/etc/wireless/mediatek/`: `mt7981.dbdc.b0.dat` (2.4 GHz) and `mt7981.dbdc.b1.dat` (5 GHz), which the driver loads, and `DBDC_card0.dat`, the web UI's combined copy. The script edits all three. Originals are kept as `*.dat.orig`.
-- Only the main network on each band is changed. The other built-in networks (WAVLINK_Guest, Parental-Wi-Fi, MeshLink) are left as they are.
+- Only Legrand_Station_N is broadcast. The factory extra networks (WAVLINK_Guest, Parental-Wi-Fi, MeshLink) are turned off by setting `BssidNum=1` in the two per-band files.
 - What runs on the router: `/usr/bin/station-lan`, `/usr/bin/station-switch`, `/etc/init.d/station-switch`, `/etc/training-station`.
 - Log: `logread -e station`.

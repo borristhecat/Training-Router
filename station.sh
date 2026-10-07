@@ -70,6 +70,9 @@ for f in "$B0" "$B1"; do
   setidx "$f" AuthMode 1 WPA2PSK
   setidx "$f" EncrypType 1 AES
 done
+# Only the main network per band (factory has Guest, Parental and MeshLink on too)
+setall "$B0" BssidNum 1
+setall "$B1" BssidNum 1
 setall "$B0" Channel "$C2"
 setall "$B1" Channel "$C5"
 
