@@ -19,7 +19,7 @@ DHCP hands out .230-.249 in both. 20 MHz on both bands, TX power 25%.
 
 The router needs internet on its WAN port.
 
-1. Set the admin password in the web UI (same on every unit).
+1. Set the admin password in the web UI (same on every unit). Use letters and numbers only: Wavlink's web login rejects passwords with symbols such as `!` even though they save without error. Don't tick "use the wifi password for the management console". Log out and back in to check it before going on.
 2. SSH in (from Windows PowerShell):
    `ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa root@<ip>`
 3. Run, with the station number at the end:
